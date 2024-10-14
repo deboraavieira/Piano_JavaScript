@@ -1,0 +1,49 @@
+body {
+    background-color: #4C2B20; 
+  }
+  
+  button {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 0 6px;
+    width:80px;
+    height: 150px;
+    left: 25%;
+    position:relative;
+  }
+  button#music{
+    width: 120px;
+    height: 120px;
+    left: 28%;
+    position:relative;
+  }
+  button#music:active{
+    background-color: rgba(193, 193, 193, 0.959); 
+    border-radius: 10px;
+    display: inline-block;
+    margin: 0 6px;
+    width:120px;
+    height: 120px;
+    left: 28%;
+    position:relative;
+    }
+
+  
+  button#parar {
+    background-color: #525c5cbe;
+    width: 300px;
+    height: 60px;
+    border-radius: 10px;
+    margin: 0 auto;
+    position: relative;
+    left: 48%;
+    transform: translateX(-50%);
+  }
+  #danca{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+  }

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Piano</title>
+    </head>
+    <body onkeydown="Muda(event)">
+        <audio id="a1" controls style="width:0px" preload="auto">
+            <source src="music/040.wav">
+        </audio>
+        <audio id="a2" controls style="width:0px" preload="auto">
+            <source src="music/041.wav">
+        </audio>
+        <audio id="a3" controls style="width:0px" preload="auto">
+            <source src="music/042.wav">
+        </audio>
+        <audio id="a4" controls style="width:0px" preload="auto">
+            <source src="music/043.wav">
+        </audio>
+        <audio id="a5" controls style="width:0px" preload="auto">
+            <source src="music/044.wav">
+        </audio>
+        <audio id="a6" controls style="width:0px" preload="auto">
+            <source src="music/045.wav">
+        </audio>
+        <audio id="a7" controls style="width:0px" preload="auto">
+            <source src="music/046.wav">
+        </audio>
+        <audio id="classica" controls style="width:0px" preload="auto">
+            <source src="music/sonata14B.mp3">
+        </audio>
+        <audio id="p1" controls style="width:0px" preload="auto">
+            <source src="music/prasonhar.mp3">
+        </audio>
+        <audio id="p2" controls style="width:0px" preload="auto">
+            <source src="music/luisa.mp3">
+        </audio>
+        <audio id="p3" controls style="width:0px" preload="auto">
+            <source src="music/samba.mp3">
+        </audio>
+        <audio id="p4" controls style="width:0px" preload="auto">
+            <source src="music/diva.mp3">
+        </audio>
+
+        <button onclick="donota()">do</button>
+        <button onclick="renota()">re</button>
+        <button onclick="minota()">mi</button>
+        <button onclick="fanota()">fa</button>
+        <button onclick="solnota()">sol</button>
+        <button onclick="lanota()">la</button>
+        <button onclick="sinota()">si</button><br><br>
+        <button id="music" onclick="classica()"> Clássica </button>
+        <button id="music" onclick="sonhar()">Pra sonhar</button>
+        <button id="music" onclick="luisa()">Funk</button>
+        <button id="music" onclick="samba()">Samba</button>
+        <button id="music" onclick="diva()">QueenB</button><br><br>
+        <button id="parar" onclick="stopAll()">Stop</button>
+
+        <script>
+                function stopAll() {
+                    var audios = document.getElementsByTagName("audio");
+                    for (var i = 0; i < audios.length; i++) {
+                    audios[i].pause();
+                    audios[i].currentTime = 0;
+                    }
+                }
+                function donota(){
+                    document.getElementById("a1").pause();
+                    document.getElementById("a1").currentTime=0;
+                    document.getElementById("a1").play();
+                }
+                function renota(){
+                    document.getElementById("a2").pause();
+                    document.getElementById("a2").currentTime=0;
+                    document.getElementById("a2").play();
+                }
+                function minota(){
+                    document.getElementById("a3").pause();
+                    document.getElementById("a3").currentTime=0;
+                    document.getElementById("a3").play();
+                }
+                function fanota(){
+                    document.getElementById("a4").pause();
+                    document.getElementById("a4").currentTime=0;
+                    document.getElementById("a4").play();
+                }
+                function solnota(){
+                    document.getElementById("a5").pause();
+                    document.getElementById("a5").currentTime=0;
+                    document.getElementById("a5").play();
+                }
+                function lanota(){
+                    document.getElementById("a6").pause();
+                    document.getElementById("a6").currentTime=0;
+                    document.getElementById("a6").play();
+                }
+                function sinota(){
+                    document.getElementById("a7").pause();
+                    document.getElementById("a7").currentTime=0;
+                    document.getElementById("a7").play();
+                }
+                function classica(){
+                    document.getElementById("classica").pause();
+                    document.getElementById("classica").currentTime=0;
+                    document.getElementById("classica").play();
+                }
+                function sonhar(){
+                    document.getElementById("p1").pause();
+                    document.getElementById("p1").currentTime=0;
+                    document.getElementById("p1").play();
+                }
+                function luisa(){
+                    document.getElementById("p2").pause();
+                    document.getElementById("p2").currentTime=0;
+                    document.getElementById("p2").play();
+                }
+                function samba(){
+                    document.getElementById("p3").pause();
+                    document.getElementById("p3").currentTime=0;
+                    document.getElementById("p3").play();
+                }
+                function diva(){
+                    document.getElementById("p4").pause();
+                    document.getElementById("p4").currentTime=0;
+                    document.getElementById("p4").play();
+                 }
+                 function Muda(event) {
+                    var key = event.keyCode;
+                    var notas = {
+                      65: donota, // Tecla A
+                      83: renota, // Tecla S
+                      68: minota, // Tecla D
+                      70: fanota, // Tecla F
+                      71: solnota, // Tecla G
+                      72: lanota, // Tecla H
+                      74: sinota // Tecla J
+                    };
+                  
+                    if (notas[key]) {
+                      notas[key]();
+                    }
+                  }
+            </script>
+    </body>
+</html>
